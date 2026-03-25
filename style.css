@@ -1,0 +1,171 @@
+/* --- GOVI PATH 360 STYLES --- */
+
+/* 1. Global Reset & Fonts */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+:root {
+    --primary-green: #388E3C;
+    --dark-green: #1b5e20;
+    --light-green: #4CAF50;
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-dark: rgba(30, 60, 30, 0.9);
+    --text-dark: #333;
+    --white: #ffffff;
+}
+
+body {
+    /* Background Image */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Modern Glass Header */
+header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-container img { height: 50px; }
+.logo-container h2 { color: var(--primary-green); font-size: 1.5rem; font-weight: 700; margin: 0; }
+
+/* 3. Navigation Buttons */
+nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    padding: 8px 25px;
+    border: 2px solid var(--primary-green);
+    border-radius: 25px;
+    background: transparent;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover & Active States */
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(56, 142, 60, 0.4);
+}
+
+/* 4. Layout & Typography */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease-out; /* Page Entrance Animation */
+}
+
+.page-title {
+    color: var(--white);
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* 5. Cards (Glassmorphism) */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px; /* Default width */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-top: 5px solid var(--primary-green);
+    text-align: center;
+}
+
+/* Dark Green Card Variant (for Details/Home info) */
+.green-card {
+    background-color: var(--glass-dark);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 30px 40px;
+    color: var(--white);
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* 6. Forms */
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: inherit; text-transform: uppercase; }
+
+.form-control {
+    width: 100%; padding: 12px 15px;
+    border-radius: 10px; border: 1px solid #ccc;
+    outline: none; font-size: 1rem; transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+.form-control:focus { border-color: var(--primary-green); box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); }
+
+/* 7. Buttons */
+.btn-main {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-main:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* 8. Footer */
+footer {
+    background-color: #f1f8e9;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: auto;
+}
+
+/* 9. Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 10. Responsive */
+@media (max-width: 768px) {
+    header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    nav ul { gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .page-title { font-size: 2rem; }
+}

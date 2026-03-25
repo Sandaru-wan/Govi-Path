@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Harvest - Govi Path 360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            /* Web Image Placeholder.*/
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Bg2.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+        }
+
+        header { background: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-container img { height: 50px; }
+        .logo-container h2 { color: #388E3C; font-size: 1.5rem; }
+        
+        /* Navigation Styles */
+        nav ul { list-style: none; display: flex; gap: 15px; }
+        
+        nav ul li a { 
+            text-decoration: none; 
+            color: #333; 
+            padding: 8px 25px; 
+            border: 2px solid #388E3C; 
+            border-radius: 25px; 
+            background: white; 
+            font-weight: 600;
+            transition: 0.3s; 
+        }
+
+        /* Hover Effect: Turns Green when mouse moves over it */
+        nav ul li a:hover {
+            background-color: #388E3C;
+            color: white;
+            cursor: pointer;
+        }
+
+        .container { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        
+        .page-title { color: white; font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); text-align: center; }
+
+        /* Form Card */
+        .form-card {
+            background-color: rgba(35, 80, 35, 0.9);
+            border: 2px solid white; border-radius: 20px; padding: 40px;
+            color: white; width: 100%; max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; color: #a5d6a7; }
+        .form-control {
+            width: 100%; padding: 12px; border-radius: 25px; border: none; outline: none; font-size: 1rem;
+        }
+
+        .btn-submit {
+            background: #4CAF50; color: white; border: 2px solid white;
+            padding: 12px 30px; border-radius: 25px; font-weight: bold; font-size: 1.1rem;
+            margin-top: 20px; cursor: pointer; width: 100%; transition: 0.3s;
+        }
+        .btn-submit:hover { background: white; color: #2E7D32; }
+
+        footer { background-color: #F3EFE0; text-align: center; padding: 15px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Logo.jpeg" alt="Logo"> 
+            <h2>Govi Path 360</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prices.html">Prices</a></li>
+                <li><a href="storage.html">Storage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Add Your Harvest Listing</h1>
+        
+        <div class="form-card">
+            <form id="harvestForm" onsubmit="saveHarvest(event)">
+                <div class="form-group">
+                    <label>Farmer Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Crop / Vegetable</label>
+                    <input type="text" id="crop" class="form-control" placeholder="Ex: Carrots" required>
+                </div>
+                <div class="form-group">
+                    <label>Price per 1kg (Rs)</label>
+                    <input type="number" id="price" class="form-control" placeholder="Ex: 250" required>
+                </div>
+                <div class="form-group">
+                    <label>Location / City</label>
+                    <input type="text" id="location" class="form-control" placeholder="Ex: Nuwara Eliya" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="phone" class="form-control" placeholder="077 123 4567" required>
+                </div>
+                
+                <button type="submit" class="btn-submit">Post Listing</button>
+            </form>
+        </div>
+    </div>
+    <footer>&copy; 2025 Govi360</footer>
+
+    <script>
+        function saveHarvest(event) {
+            event.preventDefault(); 
+
+            const newHarvest = {
+                farmer: document.getElementById('name').value,
+                crop: document.getElementById('crop').value,
+                price: document.getElementById('price').value,
+                location: document.getElementById('location').value,
+                phone: document.getElementById('phone').value
+            };
+
+            // Saving to localStorage with key 'harvestData'
+            let harvests = JSON.parse(localStorage.getItem('harvestData')) || [];
+            harvests.push(newHarvest);
+
+            localStorage.setItem('harvestData', JSON.stringify(harvests));
+
+            alert("Listing Added Successfully!");
+            window.location.href = "prices.html";
+        }
+    </script>
+</body>
+</html>

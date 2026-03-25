@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Govi Path 360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Specific Styles for Contact Page */
+        
+        /* Center content specifically for this page */
+        .container {
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        /* The Large White Box */
+        .hotline-box {
+            background-color: var(--white);
+            border-radius: 30px;
+            padding: 30px 80px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            margin-bottom: 60px;
+            display: inline-block;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Animation for the Box */
+        .hotline-box:hover {
+            transform: scale(1.05); /* Slight zoom */
+            border-color: var(--primary-green); /* Green border*/
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .hotline-number {
+            color: var(--dark-green); 
+            font-size: 5rem; 
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        /* The Quote */
+        .quote-text {
+            color: var(--white);
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 5px black;
+            max-width: 1000px;
+            line-height: 1.2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-title { font-size: 2.5rem; }
+            .hotline-number { font-size: 3rem; }
+            .hotline-box { padding: 20px 40px; width: 90%; }
+            .quote-text { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Logo.jpeg" alt="Logo"> 
+            <h2>Govi Path 360</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prices.html">Prices</a></li>
+                <li><a href="storage.html">Storage</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Govipath 360 Hotline</h1>
+        
+        <div class="hotline-box">
+            <div class="hotline-number">077 123 4567</div>
+        </div>
+
+        <h2 class="quote-text">“Protecting all farmers is our main objective!”</h2>
+    </div>
+
+    <footer>&copy; 2025 Govi360</footer>
+</body>
+</html>
