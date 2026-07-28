@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-col">
             <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.5rem', color: '#fca311' }}>
-              <Leaf color="#fca311" size={24} /> GoviPath360
+              <img src="/GoviPathLogo.svg" alt="GoviPath360 Logo" style={{ width: '32px', height: '32px' }} /> GoviPath360
             </h4>
             <p>Bridging the gap between farmers and the market with innovative digital solutions and smart cold-storage networks.</p>
           </div>

@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="navbar glass-panel" style={{ margin: '20px auto', width: '90%', borderRadius: '50px', padding: '15px 30px' }}>
       <div className="nav-container" style={{ maxWidth: '100%' }}>
         <Link to="/" className="logo">
-          <Leaf color="#2d6a4f" size={28} />
+          <img src="/GoviPathLogo.svg" alt="GoviPath360 Logo" style={{ width: '36px', height: '36px' }} />
           Govi<span>Path</span>360
         </Link>
         <div className="nav-links">

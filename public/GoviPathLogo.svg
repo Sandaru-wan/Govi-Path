@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <!-- Green gradient for the main leaf -->
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14532d" />
+      <stop offset="50%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    
+    <!-- Golden gradient for the sun -->
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fca311" />
+      <stop offset="100%" stop-color="#ffb703" />
+    </linearGradient>
+  </defs>
+
+  <!-- Golden Sun representing the Market and energy -->
+  <circle cx="85" cy="35" r="22" fill="url(#sunGrad)" />
+
+  <!-- Main Farm Leaf -->
+  <path d="M20,105 C15,65 35,30 75,15 C95,40 85,75 60,95 C40,110 20,105 20,105 Z" fill="url(#leafGrad)" />
+  
+  <!-- The 'Path' - a winding road through the leaf -->
+  <path d="M25,95 C45,85 50,55 70,25" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+  
+  <!-- Stem -->
+  <path d="M20,105 C15,110 10,115 10,115" fill="none" stroke="#14532d" stroke-width="8" stroke-linecap="round" />
+</svg>
