@@ -1,0 +1,42 @@
+.leaf-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.falling-leaf {
+  position: absolute;
+  top: -10%;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.falling-leaf svg {
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(0);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(100px);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(-20px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(20px) rotate(45deg);
+  }
+}
